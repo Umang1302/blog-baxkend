@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - MONGO_URI=mongodb://mongo:27017/nest-blog
+      - JWT_SECRET=supersecretkey
+      - GOOGLE_CLIENT_ID=<<GOOGLE_CLIENT_ID>>
+      - GOOGLE_CLIENT_SECRET=<<GOOGLE_CLIENT_SECRET>>
+      - GOOGLE_CALLBACK_URL=http://localhost:8080/auth/google/callback
+      - CORS_ENABLE_URL=http://localhost:3000
+      - FRONTEND_URL=http://localhost:3000
+    depends_on:
+      - mongo
+
+volumes:
+  mongo-data:
