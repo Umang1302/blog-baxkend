@@ -1,0 +1,41 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nest start",
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "test": "jest",
+    "test:cov": "jest --coverage"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/jwt": "^11.0.0",
+    "@nestjs/mongoose": "^11.0.0",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-express": "^11.0.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0",
+    "passport": "^0.6.0",
+    "passport-facebook": "^3.0.0",
+    "passport-facebook-token": "^3.3.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-google-token": "^0.1.2",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.8.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^11.0.13",
+    "@types/jest": "^29.5.14",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/passport-local": "^1.0.38",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.1"
+  }
+}
